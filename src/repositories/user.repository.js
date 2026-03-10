@@ -4,7 +4,6 @@ const crudRepository = require("../repositories/crud.repository")
 
 const userRepository = {
     ...crudRepository(User),
-    
 }
 
 module.exports = userRepository;
