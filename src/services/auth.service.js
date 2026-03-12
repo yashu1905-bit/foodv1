@@ -9,5 +9,21 @@ const signUpService = async (data) => {
     }
 }
 
+const loginService = async (data) => { 
+    try{
+        const user = await userRepository.findByEmail( data.email);
+        if (!user) {
+            throw new Error("User not found");
+            
+        }           
+        return user;
+    }
+    catch (error) {
+        throw error;
+    }
+  }
 
-module.exports = signUpService;
+module.exports = {
+    signUpService,
+    loginService
+};

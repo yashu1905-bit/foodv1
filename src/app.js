@@ -3,6 +3,7 @@ const app = express()
 
 const routes = require("./routes")
 
+app.use(express.json()) // for parsing application/json //json format me incoming data ko accept krta hai
 
 // http://localhost:4001/api
 app.use("/api", routes)
