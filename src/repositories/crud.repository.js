@@ -27,12 +27,23 @@ function crudRepository(model) {
         },
         updateDocument: async (id, data) => {
             try {
-                const response = await model.findByIdAndUpdate(id, data);
+                const response = await model.findByIdAndUpdate(id, data, { new: true });
+                return response;
+            } catch (error) {
+                throw error;
+            }
+        },
+
+        deleteDocument: async (id) => {
+            try {
+                const response = await model.findByIdAndDelete(id);
                 return response;
             } catch (error) {
                 throw error;
             }
         }
+
+
     }
 }
 

@@ -11,9 +11,6 @@ app.use("/api", routes)
 
 
 
-
-
-
 // http://localhost:4001/health
 app.get('/health', (req, res) => {
     res.status(200).json({
